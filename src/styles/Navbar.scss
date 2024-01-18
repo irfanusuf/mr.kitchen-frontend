@@ -1,0 +1,38 @@
+.navbar {
+
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+    
+    >ul {
+         display: flex;
+    
+        >li{
+    
+    margin-left: 20px;
+    list-style-type: none;
+    
+    
+    >a{
+    
+        color: aliceblue;
+        text-decoration: none;
+    
+        &:hover{
+    
+            color: aqua;
+        
+        
+        }
+    }
+    
+        }
+    }
+    
+    
+    
+    }
