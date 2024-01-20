@@ -1,38 +1,31 @@
 .navbar {
-
-    background-color: black;
-    width: 100%;
-    height: 50px;
+  background-color: black;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  > ul {
     display: flex;
-    justify-content: center;
-    align-content: center;
-    
-    
-    >ul {
-         display: flex;
-    
-        >li{
-    
-    margin-left: 20px;
-    list-style-type: none;
-    
-    
-    >a{
-    
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      margin-left: 20px;
+      list-style-type: none;
+
+      > a {
         color: aliceblue;
         text-decoration: none;
-    
-        &:hover{
-    
-            color: aqua;
-        
-        
+
+        &:hover {
+          color: aqua;
         }
+      }
     }
-    
-        }
-    }
-    
-    
-    
-    }
+  }
+}
