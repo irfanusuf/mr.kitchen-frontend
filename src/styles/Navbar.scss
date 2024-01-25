@@ -1,31 +1,73 @@
 .navbar {
   background-color: black;
   width: 100%;
-  height: 30px;
+  height: 50px;
   display: flex;
-  justify-content: center;
-  align-content: center;
+  align-items: center;
   position: sticky;
   top: 0;
   z-index: 1;
-  > ul {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
 
-    > li {
-      margin-left: 20px;
-      list-style-type: none;
-
-      > a {
-        color: aliceblue;
-        text-decoration: none;
-
-        &:hover {
-          color: aqua;
-        }
+  > .brand-name {
+    width: 20%;
+    font-size: 32px;
+    font-family: fantasy;
+    > li > a {
+      text-decoration: none;
+      color: aliceblue;
+      &:hover {
+        color: green;
       }
+    }
+  }
+
+  > .central-nav {
+    width: 30%;
+    display: flex;
+
+    >a{
+      color: aliceblue;
+      text-decoration: none;
+      border: 1px solid green;
+      border-radius: 8px;
+      padding: 5px 15px;
+      margin-left: 10px;
+      transition: all ease-in 0.1s;
+      &:hover{
+        color: green;
+       
+      }
+    }
+  }
+
+  >.review{
+    width: 30%;
+     color: aliceblue;
+     display: flex;
+     align-items: center;
+     >a{
+      color: aliceblue;
+      text-decoration: none;
+      border: 1px solid green;
+      border-radius: 8px;
+      padding: 5px 15px;
+      margin-left: 10px;
+      transition: all ease-in 0.1s;
+      &:hover{
+        color: green;
+       
+      }
+    }
+  }
+
+  >.nav-icons{
+    display: flex;
+    width: 20%;
+    justify-content: right;
+    margin-right: 20px;
+    >a>img{
+      width: 30px;
+      margin-left: 10px;
     }
   }
 }

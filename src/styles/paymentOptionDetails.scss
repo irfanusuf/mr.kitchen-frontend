@@ -1,0 +1,21 @@
+.paymentOptionDetails {
+  height: 100vh;
+
+  > h1 {
+    text-align: center;
+  }
+  > .container {
+    width: 700px;
+    margin: auto;
+
+    > .boxes {
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+
+      > label {
+        font-weight: 800;
+      }
+    }
+  }
+}

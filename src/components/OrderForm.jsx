@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import '../styles/orderform.scss'
+import '../styles/Orderform.scss'
 import upiIcon from '../assests/upi-icon.png'
 import stripeIcon from '../assests/stripe-icon.png'
 import AppleIcon from '../assests/apple-pay-icon.png'
@@ -24,7 +24,7 @@ const OrderForm = () => {
     const handleChange = (e) => {
                 const { name, value } = e.target;       // handling event listener 
                 SetFormData((input) => ({
-                   ...input ,   [name]: value,
+                   ...input ,   [name]: value
                 }));
             };
 
@@ -61,7 +61,7 @@ const OrderForm = () => {
 
             <div className='container'>
 
-              <div className='heading'> <IoMdArrowRoundBack onClick={()=>{navigate('/')}}/>     Order Your Food Now  <img  src={foodIcon} alt='no'/>   </div> 
+              <div className='heading'> <IoMdArrowRoundBack onClick={()=>{navigate('/')}}/>     Order Your Food   <img  src={foodIcon} alt='no'/>   </div> 
 
                 <form>
 
@@ -113,7 +113,7 @@ const OrderForm = () => {
                     <span> Payment Option Available </span>
 
 
-                    <div onClick={()=>{ navigate('/payment-options')}} className='payment-icons'>
+                    <div onClick={()=>{ navigate('/paymentOptionDetails')}} className='payment-icons'>
                         <img src={upiIcon} alt='upi Icon ' />
                         <img src={masterIcon} alt='upi Icon ' />
                         <img src={stripeIcon} alt='upi Icon ' />

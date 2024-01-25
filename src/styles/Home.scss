@@ -5,6 +5,7 @@
   height: 100vh;
   display: flex;
   > div {
+    animation: all 2s ease-in;
     position: absolute;
     right: 225px;
     top: 100px;

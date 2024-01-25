@@ -1,0 +1,156 @@
+.paymentForm {
+  background-image: url(../assests/bg8.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  > .container {
+    position: sticky;
+    background-color: rgb(255, 255, 255);
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.699);
+    max-width: 600px;
+    height: 100vh;
+
+    > .heading {
+      font-size: 42px;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      font-family: "Dancing Script";
+      > img {
+        width: 100px;
+      }
+    }
+    
+
+    > .payment-form-buttons {
+      display: flex;
+      width: 80%;
+      margin: 10px auto;
+      justify-content: space-between;
+
+      > button {
+        border: none;
+        font-size: 30px;
+        background: transparent;
+      }
+    }
+
+    > .payment-options {
+      padding-top: 30px;
+      width: 80%;
+      margin: 10px auto;
+
+      > span {
+        margin-top: 50px;
+        font-weight: 600;
+      }
+
+      > .payment-icons {
+        display: flex;
+        cursor: pointer;
+        justify-content: space-between;
+
+        > img {
+          width: 95px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+.form {
+  border: 0px solid green;
+  box-shadow: 2px 0px 10px green;
+  border-radius: 20px;
+  padding: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  margin-bottom: 30px;
+  width: 80%;
+
+  > label {
+    font-weight: 600;
+    color: rgb(10, 10, 10);
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+
+  > input,
+  select {
+    border: none;
+    border-bottom: 2px solid rgb(73, 68, 68);
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-size: 18px;
+    padding-bottom: 5px;
+    &:focus {
+      outline: none;
+    }
+    > option {
+      background-color: rgba(253, 253, 253, 0.596);
+    }
+  }
+
+  > button {
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: green;
+    margin-top: 10px;
+
+    &:hover {
+      background-color: rgb(44, 146, 44);
+    }
+    &:disabled {
+      cursor: progress;
+    }
+  }
+}
+
+
+
+.bill-order {
+  margin-top: 10px;
+  display: flex;
+  width: 80%;
+  margin: 10px auto;
+  margin-bottom: 70px;
+
+  > .order {
+    margin-right: 50px;
+
+    > label {
+      font-weight: 600;
+      color: rgb(10, 10, 10);
+      margin-bottom: 5px;
+      font-size: 22px;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+  }
+
+  > .bill {
+    margin-left: 50px;
+    > label {
+      font-weight: 600;
+      color: rgb(10, 10, 10);
+      margin-bottom: 5px;
+      font-size: 22px;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+  }
+}

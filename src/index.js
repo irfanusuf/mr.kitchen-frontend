@@ -7,6 +7,12 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import OrderForm from "./components/OrderForm";
+import Payment from "./components/Payment";
+import PaymentOptionDetails from './components/paymentOptionDetails';
+import Register from "./components/Register";
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,6 +24,10 @@ root.render(
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/OrderForm" element={<OrderForm/>} />
+        <Route path="/Payment" element={<Payment/>} />
+        <Route path="/Register" element={<Register/>} />
+        <Route path="/PaymentOptionDetails" element={<PaymentOptionDetails/>} />
+
       </Routes>
       <Footer />
     </BrowserRouter>
