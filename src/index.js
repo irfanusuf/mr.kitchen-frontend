@@ -10,6 +10,8 @@ import OrderForm from "./components/OrderForm";
 import Payment from "./components/Payment";
 import PaymentOptionDetails from './components/paymentOptionDetails';
 import Register from "./components/Register";
+import Login from "./components/Login";
+import SecureIndex from "./components/SecureIndex";
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -26,6 +28,9 @@ root.render(
         <Route path="/OrderForm" element={<OrderForm/>} />
         <Route path="/Payment" element={<Payment/>} />
         <Route path="/Register" element={<Register/>} />
+        <Route path="/Login" element={<Login/>} />
+        <Route path="/SecureIndex" element={<SecureIndex/>} />
+
         <Route path="/PaymentOptionDetails" element={<PaymentOptionDetails/>} />
 
       </Routes>

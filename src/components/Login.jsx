@@ -23,7 +23,6 @@ const Register = () => {
 
 
   const [formData, setFormData] = useState({
-    username: "",
     email: "",
     password: ""
   })
@@ -59,11 +58,15 @@ const Register = () => {
     try {
 
       setLoading(true)
-      const response = await axios.post("http://localhost:4000/user/register", formData);
+      const response = await axios.post("http://localhost:4000/user/login", formData);
 
 
-      if (response.data.message === "Registration Succesful") {
-        navigate('/login')
+      if (response.data.message === "Logged in succesfully!") {
+       const token  = response.data.token
+
+       localStorage.setItem('token' , token)
+      toast.success(response.data.message)
+        // navigate('/secureIndex')
       } else {
 
 
@@ -111,17 +114,11 @@ const Register = () => {
 
         <div className='container'>
 
-          <div className='heading'> <IoMdArrowRoundBack onClick={() => { navigate('/') }} />     Register   <img src={foodIcon} alt='no' />   </div>
+          <div className='heading'> <IoMdArrowRoundBack onClick={() => { navigate('/') }} />     Login <img src={foodIcon} alt='no' />   </div>
 
           <form>
 
-            <label>UserName</label>
-            <input
-              type='text'
-              placeholder='Enter Your Name here '
-              name="username"
-              value={formData.name}
-              onChange={handleChange} />
+      
 
 
 
@@ -148,7 +145,7 @@ const Register = () => {
 
 
 
-            <p>By registering  on our app you are accpeting our <a href='/privacy-policy'>privacy policy</a> and
+            <p>By logging in  our app you are accpeting our <a href='/privacy-policy'>privacy policy</a> and
               <a href='/privacy-policy'>user's agreement </a></p>
 
 
@@ -156,7 +153,7 @@ const Register = () => {
 
 
 
-            <button type='submit' onClick={handleRegister} disabled={loading}> Register </button>
+            <button type='submit' onClick={handleRegister} disabled={loading}> Login  </button>
 
 
             <b>Get Exciting offers</b>
