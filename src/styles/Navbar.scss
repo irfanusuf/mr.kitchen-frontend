@@ -25,7 +25,7 @@
     width: 30%;
     display: flex;
 
-    >a{
+    > a {
       color: aliceblue;
       text-decoration: none;
       border: 1px solid green;
@@ -33,19 +33,18 @@
       padding: 5px 15px;
       margin-left: 10px;
       transition: all ease-in 0.1s;
-      &:hover{
+      &:hover {
         color: green;
-       
       }
     }
   }
 
-  >.review{
+  > .review {
     width: 30%;
-     color: aliceblue;
-     display: flex;
-     align-items: center;
-     >a{
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    > a {
       color: aliceblue;
       text-decoration: none;
       border: 1px solid green;
@@ -53,21 +52,66 @@
       padding: 5px 15px;
       margin-left: 10px;
       transition: all ease-in 0.1s;
-      &:hover{
+      &:hover {
         color: green;
-       
       }
     }
   }
 
-  >.nav-icons{
+  > .nav-icons {
     display: flex;
     width: 20%;
     justify-content: right;
     margin-right: 20px;
-    >a>img{
+    > a > img {
       width: 30px;
       margin-left: 10px;
+    }
+  }
+
+  > .burger {
+    color: antiquewhite;
+    font-size: 30px;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+    > .side-menu {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      height: 85vh;
+      width: 300px;
+      z-index: +2;
+      background-color: rgba(240, 248, 255, 0.534);
+      border-radius: 10px 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .navbar {
+    justify-content: space-between;
+
+    > .brand-name {
+      width: 50%;
+    }
+
+    > .central-nav {
+      display: none;
+    }
+
+    > .review {
+      display: none;
+    }
+
+    > .nav-icons {
+      display: none;
+    }
+
+    > .burger {
+      display: flex;
     }
   }
 }

@@ -41,12 +41,10 @@ const Register = () => {
 
 
   const handleBackward = () => {
-
     setDisplayImg((displayImg - 1 + 3) % 3);
   };
 
   const handleForward = () => {
-
     setDisplayImg((displayImg + 1) % 3);
   };
 
@@ -60,32 +58,25 @@ const Register = () => {
       setLoading(true)
       const response = await axios.post("http://localhost:4000/user/login", formData);
 
-
       if (response.data.message === "Logged in succesfully!") {
-       const token  = response.data.token
 
-       localStorage.setItem('token' , token)
-      toast.success(response.data.message)
-        // navigate('/secureIndex')
+        toast.success(response.data.message)
+        const token  = response.data.token
+        localStorage.setItem('token' , token)
+        navigate('/secureIndex')
       } else {
-
-
         toast.error(response.data.message)
       }
-
-
-
 
     } catch (error) {
       setLoading(false)
       console.log(error);
+      toast.error("Server Error")
     }
     finally {
       setLoading(false)
     }
   }
-
-
 
 
 
@@ -111,17 +102,13 @@ const Register = () => {
 
       <div className='Register-form'>
 
-
         <div className='container'>
 
           <div className='heading'> <IoMdArrowRoundBack onClick={() => { navigate('/') }} />     Login <img src={foodIcon} alt='no' />   </div>
 
           <form>
 
-      
-
-
-
+    
             <label> Email</label>
             <input
               type='email'
@@ -131,8 +118,7 @@ const Register = () => {
               onChange={handleChange} />
 
 
-
-            <label> password </label>
+            <label> Password </label>
             <input
               type='password'
               placeholder='Enter Your password here'
@@ -142,14 +128,8 @@ const Register = () => {
             />
 
 
-
-
-
             <p>By logging in  our app you are accpeting our <a href='/privacy-policy'>privacy policy</a> and
               <a href='/privacy-policy'>user's agreement </a></p>
-
-
-
 
 
 
@@ -175,9 +155,6 @@ const Register = () => {
       </div>
     </>
   )
-
-
-
 
 }
 

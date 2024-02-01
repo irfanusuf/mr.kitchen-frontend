@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom'
 import InstaIcon from '../assests/ig-instagram-icon.png'
 import youtuIcon from '../assests/youtube-color-icon.png'
 import faceIcon from '../assests/facebook-round-color-icon.png'
-import { MdOutlineArrowDropDownCircle } from "react-icons/md";
-
+// import { MdOutlineArrowDropDownCircle } from "react-icons/md";
+import { GiHamburger } from "react-icons/gi";
+import { IoCloseSharp } from "react-icons/io5";
 const Navbar = () => {
 
 
@@ -18,7 +19,7 @@ const [toggle , setToggle] =useState(false)
 
 const handleToggle = ()=>{
 setToggle(!toggle)
-console.log(toggle)
+
 
 }
 
@@ -45,9 +46,7 @@ console.log(toggle)
         <Link to='/Register'>  Register</Link>
 
 
-      <  MdOutlineArrowDropDownCircle  onClick={handleToggle}/>
-
- {toggle && <div>dropdown</div>}
+    
       </div>
 
 
@@ -63,6 +62,22 @@ console.log(toggle)
 
 
       </div>
+
+      <div className='burger'> {toggle ?  <IoCloseSharp onClick={handleToggle}/> : <GiHamburger onClick={handleToggle}/>} 
+        
+        
+        
+        
+        {toggle &&<div className='side-menu'>   
+
+             
+
+        </div>}
+      
+      
+       </div>
+
+
 
     </div>
   )

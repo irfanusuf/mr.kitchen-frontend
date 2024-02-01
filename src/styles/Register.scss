@@ -52,6 +52,11 @@
           }
          
         }
+
+        >p{
+
+          font-weight: 600;
+        }
   
         > button{
           height: 40px;
@@ -61,8 +66,8 @@
           border: none;
           cursor: pointer;
           background-color: green;
-          margin-top: 30px;
-          margin-bottom: 30px;
+          margin-top: 20px;
+          margin-bottom: 20px;
           &:hover {
             background-color: rgb(44, 146, 44);
           }
@@ -71,8 +76,18 @@
           }
         }
   
+      >.already-acc{
+         color: blue;
+         font-weight: 700;
+         margin-bottom: 20px;
+         cursor: pointer;
+
+      }
+
+
+
         > span{
-        color: rgb(8, 54, 8);
+          color: rgb(8, 54, 8);
           font-weight: 600;
           font-size: 20px;
           font-family: "Dancing Script";

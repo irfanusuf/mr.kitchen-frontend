@@ -1,64 +1,17 @@
 import React from 'react'
-
 import '../styles/SecureIndex.scss'
-import { useNavigate } from 'react-router-dom'
-
-const SecureIndex =  async () => {
-
-
-    const navigate = useNavigate()
+import IsAuthenticated from '../authorization/auth'
 
 
 
-      try { 
+const SecureIndex = () => {
 
-        const response = await  axios.get('http//localhost:4000/user/homepage')
-            if (response.data.message === "Authorized!"){
-
-                   navigate ('/SecureIndex')
-            }
-            else {
-
-                navigate('/login')
-            }
-
-
-
-      }
-      catch (error){
-
-        console.log(error)
-      }
-
-
-
-
-
-
-
-
-
+ IsAuthenticated()
+ 
     return (
         <div className='secure-index'>
-
             <h1>  SecureIndex </h1>
-
-
-
             <h2> this is our secure landing page</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     )
 }
