@@ -127,10 +127,9 @@ const OrderForm = () => {
                         name='order'
                         value={formData.order}
                         onChange={handleChange}>
-                        <option > Available Items</option>
+                       
                         <option value="kunafah"> Kunafah</option>
-                        <option value=" Fried tuna Fish "> Fried Tuna Fish</option>
-                        <option value=" bakalvah "> Bakalvah </option>
+                       
 
                     </select>
 
