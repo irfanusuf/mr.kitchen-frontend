@@ -10,6 +10,8 @@ import PaymentOptionDetails from './components/paymentOptionDetails';
 import Register from "./components/Register";
 import Login from "./components/Login";
 import SecureIndex from "./components/SecureIndex";
+import ForgotPass from './components/ForgotPass';
+import ChangePass from './components/ChangePass';
 
 const App = () => {
 
@@ -26,6 +28,8 @@ const App = () => {
       <Route path="/Login" element={<Login/>} />
       <Route path="/SecureIndex" element={<SecureIndex/>}  />
       <Route path="/PaymentOptionDetails" element={<PaymentOptionDetails/>} />
+      <Route path='/Forgot-Password' element={<ForgotPass/>}/>
+      <Route path='/Change-Password' element={<ChangePass/>}/>
     </Routes>
     <Footer/>
   </BrowserRouter>
