@@ -19,8 +19,8 @@ const ChangePass = () => {
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
-    password: "",
-    confirmPassword: "",
+    newPassword: "",
+    confirmNewPassWord: "",
   });
 
   const handleChange = (e) => {
@@ -39,17 +39,21 @@ const ChangePass = () => {
     setDisplayImg((displayImg + 1) % 3);
   };
 
+  // front end logic
   const handleChangePass = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
+      const userId = localStorage.getItem('userId')
       const response = await axios.post(
-        "http://localhost:4000/user/forgotpassword",
+        `http://localhost:4000/user/updatePassword?userId=${userId}`,
         formData
       );
 
-      if (response.data.status === 201) {
-        toast.success(response.data.message);
+      if (response.data.message === "PassWord Updated SucessFully!") {
+     
+        localStorage.removeItem('userId')
+        navigate('/login')
       } else {
         toast.error(response.data.message);
       }
@@ -79,24 +83,33 @@ const ChangePass = () => {
           </div>
 
           <form>
-            <label> Email</label>
+            <label> New PassWord</label>
             <input
-              type="email"
-              placeholder="Enter Your Email here"
-              name="email"
-              value={formData.email}
+              type="password"
+              placeholder="Enter Your new Password here "
+              name="newPassword"
+              value={formData.newPassword}
+              onChange={handleChange}
+            />
+
+            <label> Confirm New PassWord</label>
+            <input
+              type="password"
+              placeholder="Confirm Your new Password here "
+              name="confirmNewPassWord"
+              value={formData.confirmNewPassWord}
               onChange={handleChange}
             />
 
             <button type="submit" onClick={handleChangePass} disabled={loading}>
-              {" "}
-              Change PassWord{" "}
+          
+              Change PassWord
             </button>
 
             <b>Get Exciting offers</b>
             <span className="animate__animated animate__slideInLeft ">
-              {" "}
-              Buy a large pizza and get crispy chicken of worth Rs 300/= free{" "}
+         
+              Buy a large pizza and get crispy chicken of worth Rs 300/= free
             </span>
 
             <div className="icons">
