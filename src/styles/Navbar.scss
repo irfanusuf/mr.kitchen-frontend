@@ -67,6 +67,39 @@
       width: 30px;
       margin-left: 10px;
     }
+    > .menu-icon {
+      margin-right: 30px;
+      color: aliceblue;
+      font-size: 25px;
+      font-weight: 800;
+    }
+    > .nav-dropdown {
+      position: absolute;
+      background-color: azure;
+      top: 30px;
+      margin-left: 30px;
+      color: black;
+      list-style-type: none;
+      padding-left: 0;
+      width: 300px;
+      height: 200px;
+      border-radius: 10px;
+
+      > li {
+        border-radius: 10px;
+        background-color: azure;
+        padding-left: 20px;
+        padding-bottom: 5px;
+        font-weight: 600;
+
+        &:hover {
+          background-color: green;
+          scale: 1.05;
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
   }
 
   > .burger {

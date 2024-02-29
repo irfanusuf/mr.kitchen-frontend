@@ -5,35 +5,41 @@ import { Link, useNavigate } from "react-router-dom";
 import InstaIcon from "../assests/ig-instagram-icon.png";
 import youtuIcon from "../assests/youtube-color-icon.png";
 import faceIcon from "../assests/facebook-round-color-icon.png";
-// import { MdOutlineArrowDropDownCircle } from "react-icons/md";
 import { GiHamburger } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
-// import isloggedin from "../authorization/authmid";
+import { RiListSettingsLine } from "react-icons/ri";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [toggle, setToggle] = useState(false);
-
   const [isloggedin, setIsLoggedIn] = useState(false);
+  const [dropdown, setDropDown] = useState(false);
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    console.log(`'your token' : ${token}`)
-
-    if (token !== null) {
-      setIsLoggedIn(true);
-    }
-  }, []);
-
-
+  const token = localStorage.getItem("token");
 
   const handleToggle = () => {
     setToggle(!toggle);
   };
 
+  const handleDropDown = () => {
+    setDropDown(!dropdown);
+  };
+
+  useEffect(() => {
+    if (token !== null) {
+      setIsLoggedIn(true);
+    }
+  }, [token]);
+
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/");
+    if (isloggedin) {
+      localStorage.removeItem("token");
+      setIsLoggedIn(false);
+      setDropDown(false);
+      navigate("/");
+    } else {
+      setDropDown(false);
+    }
   };
 
   return (
@@ -52,12 +58,43 @@ const Navbar = () => {
 
       <div className="review">
         <p> Get 20% flat off by reviewing our food </p>
-        <Link to="/Register"> Register</Link>
-
-        {isloggedin && <button onClick={handleLogout}> LogOut</button>}
+        <Link to="/register"> Register</Link>
+        <Link to= "/admin"> Admin </Link>
       </div>
 
+
+
       <div className="nav-icons">
+        <div className="menu-icon">
+          {" "}
+          {!dropdown ? (
+            <RiListSettingsLine onClick={handleDropDown} />
+          ) : (
+            <IoCloseSharp onClick={handleDropDown} />
+          )}
+        </div>
+
+        {dropdown && (
+          <ul className="nav-dropdown">
+            <li
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              Already have an Account !  Login!
+            </li>
+
+            <li onClick={()=>{navigate('/user/placeorder')}}>Order Food</li>
+            <li>Track Your Package</li>
+            <li>Rewards</li>   
+            <li onClick={()=>{navigate('/PaymentOptionDetails')}} >Payment Options </li>
+            <li>Security Options</li>
+            <li>Account Settings</li>
+            <li onClick={()=>{navigate('/delete/user')}}>Delete Account </li>
+            <li onClick={handleLogout}> Logout</li>
+            <li onClick={handleDropDown}> Close</li>
+          </ul>
+        )}
         <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
           <img src={InstaIcon} alt="icon" />
         </a>
