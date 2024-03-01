@@ -1,20 +1,22 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "../styles/Register.scss";
+import {  useNavigate } from "react-router-dom";
+import "./Form.scss";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import foodIcon from "../assests/mimibubu.gif";
-import pizzaImg from "../assests/pizza 1.jpg";
-import pizzaImg2 from "../assests/pizza 2.jpg";
 
-// import chickenImg from '../assests/pexels-denys-gromov-12916901-removebg-preview.png'
-import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
+
+
+const styles = {
+
+color : "#ff2e07"
+
+}
+
 
 const Register = () => {
   const navigate = useNavigate();
-
-  const [displayImg, setDisplayImg] = useState(0);
 
   const [loading, setLoading] = useState(false);
 
@@ -32,13 +34,6 @@ const Register = () => {
     }));
   };
 
-  const handleBackward = () => {
-    setDisplayImg((displayImg - 1 + 3) % 3);
-  };
-
-  const handleForward = () => {
-    setDisplayImg((displayImg + 1) % 3);
-  };
 
   const handleDelete = async (e) => {
     e.preventDefault();
@@ -108,28 +103,16 @@ const Register = () => {
               onChange={handleChange}
             />
 
-            {/* 
-            <p>By logging in  our app you are accpeting our <a href='/privacy-policy'>privacy policy</a> and
-              <a href='/privacy-policy'>user's agreement </a></p> */}
+           
+            <p>By deleting your account  you are accpeting our <a href='/privacy-policy'>privacy policy</a> and
+              <a href='/privacy-policy'>user's agreement </a></p> 
 
-            <button type="submit" onClick={handleDelete} disabled={loading}>
+              <p style={{color : styles.color}}> <b> Disclaimer : </b> After Deleteing your account we will keep your data safe for 30 days and user can reactivate  account by simply logging in anytime in the span of 30 days  </p> 
+
+            <button  style= {{backgroundColor : styles.color}}type="submit" onClick={handleDelete} disabled={loading}>
               {" "}
               Delete My Account
             </button>
-
-            {/* <b>Get Exciting offers</b>
-            <span className='animate__animated animate__slideInLeft ' > Buy a large pizza and get crispy chicken of worth Rs 300/= free </span>
- */}
-
-            {/* <div className='icons'>
-              <MdArrowBackIosNew onClick={handleBackward} />
-              {displayImg === 1 && <img className='animate__animated animate__slideInUp ' src={pizzaImg} alt='icon' />}
-              {displayImg === 2 && <img className='animate__animated animate__slideInUp' src={pizzaImg2} alt='icon' />}
-              {displayImg === 3 && <img className='animate__animated animate__slideInUp' src={pizzaImg} alt='icon' />}
-              {displayImg === 0 && <img className='animate__animated animate__slideInUp' src={pizzaImg} alt='icon' />}
-              <MdArrowForwardIos onClick={handleForward} />
-
-            </div> */}
           </form>
         </div>
       </div>

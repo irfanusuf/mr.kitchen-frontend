@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import '../styles/Register.scss'
+import "./Form.scss";
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import { IoMdArrowRoundBack } from 'react-icons/io'

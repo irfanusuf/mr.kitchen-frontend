@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/SecureIndex.scss'
+import './SecureIndex.scss'
 import IsAuthenticated from '../authorization/auth'
 
 

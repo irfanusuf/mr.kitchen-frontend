@@ -1,12 +1,12 @@
 import React, {  useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import '../styles/Payment.scss'
+import './Payment.scss'
 import upiIcon from '../assests/upi-icon.png'
 import stripeIcon from '../assests/stripe-icon.png'
 import AppleIcon from '../assests/apple-pay-icon.png'
 import masterIcon from '../assests/master-card-icon.png'
 import foodIcon from '../assests/mimibubu.gif'
-import PaymentSection from '../components/PaymentSection'
+import PaymentSection from './PaymentSection'
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { IoCaretBack, IoCaretForward } from "react-icons/io5";
 

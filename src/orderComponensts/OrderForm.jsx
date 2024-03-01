@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/orderform.scss";
+import "./OrderForm.scss";
 import upiIcon from "../assests/upi-icon.png";
 import stripeIcon from "../assests/stripe-icon.png";
 import AppleIcon from "../assests/apple-pay-icon.png";

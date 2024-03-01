@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import "../styles/Navbar.scss";
+import "./Navbar.scss";
 import { Link, useNavigate } from "react-router-dom";
 import InstaIcon from "../assests/ig-instagram-icon.png";
 import youtuIcon from "../assests/youtube-color-icon.png";
@@ -52,7 +52,7 @@ const Navbar = () => {
       </div>
 
       <div className="central-nav">
-        <Link to="/order"> Order Food</Link>
+        <Link to="/items"> Order Food</Link>
         <Link to="/foodGallery"> Our Gallery</Link>
       </div>
 

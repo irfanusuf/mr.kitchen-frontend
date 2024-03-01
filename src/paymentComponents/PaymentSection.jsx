@@ -1,5 +1,5 @@
 import React, {useState}from 'react'
-import '../styles/Payment.scss'
+import './Payment.scss'
 
 
 const PaymentSection = () => {
