@@ -1,0 +1,39 @@
+.all-items{
+    display: flex;
+    background-color: aquamarine;
+    min-height: 100vh;
+
+>.cards{
+width: 90%;
+margin: auto;
+margin-top: 20px;
+display: flex;
+flex-wrap: wrap;
+
+    >.card{
+
+        width: 300px;
+       
+        border: 1px solid green;
+        display: flex;
+        flex-direction: column;
+
+
+        >span {
+
+            font-weight: 700;
+
+            >p{
+
+                font-weight:400 ;
+                margin: 0;
+            }
+        }
+
+
+
+
+    }
+}
+
+}

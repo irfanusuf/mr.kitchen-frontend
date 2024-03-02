@@ -8,6 +8,7 @@ import Navbar from "./sharedComponents/Navbar";
 import Home from "./sharedComponents/Home";
 import Contact from "./sharedComponents/Contact";
 import Footer from "./sharedComponents/Footer";
+import NotFound from './sharedComponents/NotFound';
 
 
 import Payment from "./paymentComponents/Payment";
@@ -33,8 +34,11 @@ const App = () => {
     <BrowserRouter>
     <Navbar/>
     <Routes>
+
+      {/* shared routes */}
       <Route path="/" element={<Home />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="*" element={<NotFound />} />
 
       {/* user Routes */}
       <Route path="/register" element={<Register/>} />
