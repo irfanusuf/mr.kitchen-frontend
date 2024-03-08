@@ -25,8 +25,10 @@ import DeleteUser from './userComponents/DeleteUser';
 
 
 import AllItems from './orderComponensts/AllItems';
-import OrderForm from "./orderComponensts/OrderForm";
+import CreateItem from './adminComponents/CreateItem';
 
+
+import OrderForm from "./orderComponensts/OrderForm";
 const App = () => {
 
   return (
@@ -56,6 +58,10 @@ const App = () => {
       {/* order routes */}
       <Route path='/items' element={<AllItems/>}/>
       <Route path="/user/placeorder" element={<OrderForm/>} />
+
+      {/* admin routes */}
+
+      <Route path='/admin/createitem' element={<CreateItem/>}/>
 
     </Routes>
     <Footer/>
