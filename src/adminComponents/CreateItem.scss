@@ -1,0 +1,50 @@
+.form-container {
+  height: 100vh;
+  background-color: grey;
+  display: flex;
+
+  > .item-form {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+    height: 600px;
+
+    > form {
+      margin-left: 50px;
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+    
+
+      > label {
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      > input {
+        width: 80%;
+        margin-bottom: 10px;
+      }
+
+      > button {
+        width: 80%;
+        background-color: green;
+        color: aliceblue;
+        border-radius: 8px;
+        border: 1px solid black;
+        padding: 5px 10px;
+      }
+    }
+
+    > .item{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px ;
+      
+        
+      }
+  }
+}

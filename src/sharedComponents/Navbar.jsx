@@ -59,7 +59,11 @@ const Navbar = () => {
       <div className="review">
         <p> Get 20% flat off by reviewing our food </p>
         <Link to="/register"> Register</Link>
-        <Link to= "/admin"> Admin </Link>
+
+        
+        <Link to= "/admin/createitem"> Admin </Link>
+
+
       </div>
 
 
