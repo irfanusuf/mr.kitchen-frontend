@@ -3,10 +3,9 @@
   background-color: rgb(16, 18, 17);
   min-height: 100vh;
 
-  >.spinner{
+  > .spinner {
     width: 30px;
     margin: auto;
-
   }
 
   > .cards {
@@ -16,21 +15,14 @@
     display: flex;
     flex-wrap: wrap;
 
-
-    >.no-item{
+    > .no-item {
       color: aliceblue;
       font-size: 42px;
       font-weight: 700;
       width: 550px;
       margin: auto;
       margin-top: 200px;
-   
-
-
     }
-
-
-
 
     > .card {
       width: 300px;
@@ -42,10 +34,14 @@
       color: aliceblue;
       border-radius: 8px;
 
-      > img {
-        height: 200px;
-        border-radius: 8px;
+      > a {
+        > img {
+          width: 300px;
+          height: 200px;
+          border-radius: 8px;
+        }
       }
+
       > .details {
         padding: 10px;
 
