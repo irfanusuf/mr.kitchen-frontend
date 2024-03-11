@@ -1,6 +1,6 @@
-import React, {useCallback , useState , useEffect} from 'react'
+import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios"
+
 
 
 // static imports 
@@ -26,45 +26,13 @@ import DeleteUser from './userComponents/DeleteUser';
 
 
 import AllItems from './orderComponensts/AllItems';
+import Item from './orderComponensts/Item';
 import CreateItem from './adminComponents/CreateItem';
 
 
 import OrderForm from "./orderComponensts/OrderForm";
-import Item from './orderComponensts/Item';
+
 const App = () => {
-
-
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [noItem, setNoItem] = useState("");
-
-
-  const fetchData = useCallback(async () => {
-    try {
-      const response = await axios.get("http://localhost:4000/allItems");
-      console.log(response);
-
-      if (response.data.message === "All Items are here!") {
-        setItems(response.data.items);
-        setLoading(false);
-        if (response.data.items.length === 0) {
-          setNoItem("No Items are Available !");
-        }
-      } else {
-        // toast.error("server Error");
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchData();
-    
-  }, [fetchData]);
-
-
-
 
   return (
   
@@ -91,11 +59,9 @@ const App = () => {
       
      
       {/* order routes */}
-      <Route path='/items' element={<AllItems
-      items ={items}
-      loading = {loading}
-      />}/>
-      <Route path={`/items/${items}`} element={<Item/>}/>
+      <Route path='/items' element={<AllItems />}/>
+      <Route path="/items/:itemId"element={<Item/>}/>
+      
 
       <Route path="/user/placeorder" element={<OrderForm/>} />
 

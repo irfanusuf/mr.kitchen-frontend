@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Item.scss";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
-const Item = (props) => {
+const Item = () => {
+
+
+  const { itemId } = useParams();
+  const [item, setItem] = useState({});
+  // const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchItem = async () => {
+      try {
+        const response = await axios.get(`http://localhost:4000/item/?itemId=${itemId}`);
+        console.log(response);
+
+        if (response.data.message === "Item found!") {
+          setItem(response.data.item);
+          // setLoading(false);
+        } else {
+          
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchItem();
+  }, [itemId]);
 
 
     
@@ -9,16 +36,16 @@ const Item = (props) => {
     <div className="container">
       <div className="single-card">
         <div>
-            <img src={props.item.imageUrl}  alt="no-preview"/>
+            <img src={item.imageUrl}  alt="no-preview"/>
         </div>
 
         <div>
-
-            Title : {props.item.title}
-            Description : {props.item.description}
-            Reviews : {props.item.review}
-            likes : {props.item.likes.length}
-            dislikes : {props.item.dislikes.length}
+{/* 
+            Title : {item.title}
+            Description : {item.description}
+            Reviews : {item.review}
+            likes : {item.likes.length}
+            dislikes : {item.dislikes.length} */}
 
         </div>
       </div>
