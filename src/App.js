@@ -60,7 +60,11 @@ const App = () => {
      
       {/* order routes */}
       <Route path='/items' element={<AllItems />}/>
+
       <Route path="/items/:itemId"element={<Item/>}/>
+
+
+      {/* <Route path={`/items/?itemId=${itemId}`}element={<Item/>}/> */}
       
 
       <Route path="/user/placeorder" element={<OrderForm/>} />

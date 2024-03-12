@@ -17,11 +17,18 @@ const AllItems = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [noItem, setNoItem] = useState("");
+  const token = localStorage.getItem("token")
 
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await axios.get("http://localhost:4000/allItems");
+      const response = await axios.get("http://localhost:4000/allItems" ,
+       {
+        headers : {
+          token : token
+        }
+       }
+      );
       console.log(response);
 
       if (response.data.message === "All Items are here!") {
@@ -39,6 +46,9 @@ const AllItems = () => {
   }, []);
 
   useEffect(() => {
+
+
+    
     fetchData();
     
   }, [fetchData]);

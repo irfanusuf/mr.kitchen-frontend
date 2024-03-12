@@ -7,13 +7,11 @@
     flex-direction: column;
   
     > .container{
-      position: sticky;
+      
       background-color: rgb(255, 255, 255);
-      top: 0;
-      left: 0;
       box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.699);
-      max-width: 600px;
-      height: 100vh;
+      max-width: 500px;
+      min-height: 120vh;
   
       > .heading{
         font-size: 42px;

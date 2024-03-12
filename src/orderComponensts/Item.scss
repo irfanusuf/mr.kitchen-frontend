@@ -1,4 +1,4 @@
-.container {
+.container-m{
 background-color: antiquewhite;
 height: 100vh;
 display: flex;
@@ -11,6 +11,19 @@ align-items: center;
      background-color: black;
      width: 800px;
      height: 600px;
+
+
+     >div{
+        width: 400px;
+        background-color: aqua;
+
+       >img{
+
+        width: 100%;
+       }
+       
+       
+     }
 
 
     }
