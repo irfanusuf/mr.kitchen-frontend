@@ -63,10 +63,6 @@ const App = () => {
 
       <Route path="/items/:itemId"element={<Item/>}/>
 
-
-      {/* <Route path={`/items/?itemId=${itemId}`}element={<Item/>}/> */}
-      
-
       <Route path="/user/placeorder" element={<OrderForm/>} />
 
       {/* admin routes */}
